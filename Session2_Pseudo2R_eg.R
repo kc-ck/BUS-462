@@ -1,5 +1,10 @@
+############################################################
+# BUS 462 | Spring 2021 | Session 2
+# ### PSEUDOCODE TO R CODE EXAMPLE in CLASS
+# CK 
+# 20 JAN 2021 
+############################################################
 
-### PSEUDOCODE TO R CODE EXAMPLE in CLASS
 
 ##PSEUDOCODE to find average of 10 individual grades
 #1 Set total to zero
