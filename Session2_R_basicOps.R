@@ -39,7 +39,7 @@ cat("\014")  # Clear Console
   # You can use standard mathematical functions, such as sqrt(), exp(), and log(). For example
   log(0.3/(1 - 0.3))
   
-  
+   
   
 ### Assignments :: Assigning values to variables are done by <- or =
   
@@ -49,14 +49,17 @@ cat("\014")  # Clear Console
   
   class(x) # see the class of x
   is.vector(x) # checks if x is a vector class object
+  is.character(x)
   
   # you can now operate on x, # just like excel
   x+1
   x <- x+1 # operating value of x
+  x
   
   y = 2 # Assign value 2 to another object
   
   z <- x + y # create a new object that is the sum of vectors x and y
+  
   # is z a vector?
   is.vector(z) #  YES - [1] TRUE 
   
@@ -74,7 +77,7 @@ cat("\014")  # Clear Console
 # 2. DATA STRUCTURES/ OBJECTS ####
 ###################################0
 
-  #$Think of objects as boxes. The names of the objects are only labels. 
+  #Think of objects as boxes. The names of the objects are only labels. 
   #Just like with boxes, it is convenient to label boxes in a way that is indicative of their contents, 
   # but the label itself does not determine the content.
   
@@ -156,7 +159,7 @@ cat("\014")  # Clear Console
   # This informs you that x is now a factor with two levels (or, a categorical variable with two categories).
   typeof(x) # x is stored as an int!
   class(x) # but the object is of class/data structure factor!
-  type
+
   
   # we can coerce factors to numeric to strip labels "control and treatment"
   x <- as.numeric(x)
@@ -204,7 +207,10 @@ cat("\014")  # Clear Console
   #2: NaN, stands for "not a number". 
   # It is technically of class numeric but only occurs as the output of invalid mathematical operations, 
   # such as dividing zero by zero or taking a square root of a negative number:
+###############################
   
+  
+####  E100 STOP POINT 21 Jan 2020
   
 ###################################0
 # 3. INTRO TO FUNCTIONS ####
