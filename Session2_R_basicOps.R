@@ -11,7 +11,7 @@
 
 
 ###################################0
-# 0 . Comments - anything starting with "#" means a comment
+# 0 . Comments - anything starting with "#" means a comment ####
 ###################################0
 
 # remember to hit CTRL-ENTER to run code in editor
@@ -55,6 +55,7 @@ cat("\014")  # Clear Console
   x+1
   x <- x+1 # operating value of x
   x
+  View(x)
   
   y = 2 # Assign value 2 to another object
   
@@ -70,7 +71,7 @@ cat("\014")  # Clear Console
   x>y
   x>=y
   x<y
-  x==y # note that == is different than =
+  z==y # note that == is different than =
 
 
 ###################################0
@@ -122,9 +123,9 @@ cat("\014")  # Clear Console
   x <- seq(1, 100, 1)
 
   # you can use logical operations to check elements of x. e.g.:
-  x<5 # returns TRUE / FALSE for each element of x
+  y <- x<5 # returns TRUE / FALSE for each element of x
   
-  x[x<=5] # outputs values of x that are leq 5 
+  y <- x[x!=5] # outputs values of x that are leq 5 
   # these can now be assigned another object! ==> Very useful in analytics
   
   
@@ -239,9 +240,11 @@ cat("\014")  # Clear Console
 ### this is VERY USEFUL in analytics
 
   
-###Let this be your mantra: "If I want to keep it for later, I need to put it in an object so that is doesn't go off." 
-  
+  ###Let this be your mantra: "If I want to keep it for later, I need to put it in an object so that is doesn't go off." 
 
+#### D100 STOP POINT 21 Jan 2020
+  
+  
 ###################################0
 # 4. simple graphing ####
   ###################################0
