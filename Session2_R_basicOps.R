@@ -267,3 +267,72 @@ cat("\014")  # Clear Console
   barplot(z2)
   plot(z2)
 
+  
+  ###################################0
+  # 5. A preview to Clean Data (Data Frames) and plotting ####
+  # Note - A LOT MORE TO COME
+  ###################################0  
+
+  # For this example we'll use a very simple dataset. 
+  # The cars data comes with the default installation of R. 
+  # to see all pre-loaded datasets, simply type data()
+  
+  # to see a desc of the data
+  ?cars
+  # also try  for mtcars dataset 
+  
+  # To see the first few columns of the data, just type head(cars).
+  head(cars)
+  
+  # let's create a data frame object and assign it to the default cars data
+  dt <- cars 
+  
+  #check the structure of dt
+  str(dt)
+  
+  View(dt) # let's see this data
+  # we have obs for speed and stopping distance for cars in 1920s
+
+  
+  # let's calculate  average and std dev of speed and distance
+  avg.speed <- mean(dt$speed) # notice the $ to point the general function mean to a specific column!
+  avg.distance <- mean(dt$dist)
+  
+  sd.speed <- sqrt(var(dt$speed))
+  sd.distance <- sqrt(var(dt$dist))
+  
+  # let's visualize the data
+  hist(dt$dist) # histogram of distance
+  hist(dt$speed)
+  plot(dt$speed)
+  plot(dt$dist)
+  # let's see relationships
+  cor(dt) # simplistic correlation matrix
+  plot(dt$speed,dt$dist) # simple scatter plot
+  
+  # Q: Change the axis to the plot above!
+  ####
+  ###
+  ###
+  ####
+  ###
+  #######
+  ###
+  #######
+  ###
+  #######
+  ###
+  #######
+  ###
+  #######
+  ###
+  #######
+  ###
+  ###
+  plot(dt$dist,dt$speed)
+  
+  
+  ## Going forward, we shall use other packages and the like to explore data and make plots
+  
+  
+  ### END OF CODE #####
