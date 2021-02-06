@@ -33,7 +33,6 @@ gc()
 dt <- iris # assign dataset to object dt
 
 
-
 #1 Measure of central tendency: mean, median, mode #####
   mean(dt$Sepal.Length)
 
@@ -69,7 +68,7 @@ dt <- iris # assign dataset to object dt
   
   median(dt$Sepal.Length)
   # you can also use quantile function to find value of x percentile of your data
-  quantile(dt$Sepal.Length,.95)
+  quantile(dt$Sepal.Length,.5)
   
   # mode isn't readily available. We'll get to it alter.
   
@@ -82,7 +81,7 @@ dt <- iris # assign dataset to object dt
   #The interquartile range (i.e., the difference between the first and third quartile)
   IQR(dt$Sepal.Length)
   # or you can calculate differences manually
-  quantile(dt$Sepal.Length,.75) - quantile(dt$Sepal.Length,.25)
+  quantile(dt$Sepal.Length,.95) - quantile(dt$Sepal.Length,.05)
   
   # 2,3 Var and STD DEV
   var(dt$Sepal.Length)
@@ -115,11 +114,10 @@ dt <- iris # assign dataset to object dt
 #4 Misc. Short cut functions  #####
   # 4.1 sappply to to apply a particular function over a list or vector. 
   ## i.e. Use it, to compute a function for each column in a data frame, like mean, sd, var, min, quantile, …
-  # column  output
+  # row  output
   sapply(dt[, -5], mean)
-    
   
-  # 4.2 lapply does the same, but in row output
+  # 4.2 lapply does the same, but in column output
   lapply(dt[,-5], mean)
   
 # 5 EASY PACKAGE(S) stat.desc function in pastecs package #############
@@ -128,12 +126,13 @@ dt <- iris # assign dataset to object dt
 library(pastecs)    # call package
 # reference: https://cran.r-project.org/web/packages/pastecs/pastecs.pdf 
 
-  stat.desc(dt)
+stat.desc(dt)
 
 # you can save this easily as a table or data frame
 res <- stat.desc(dt[,-5]) # since col 5 is qualitative, we skip it 
 res <- round(res, 2) # round digits to 2
 print(res)
+
 # this is easy to save -  either use write.csv or anything else - google /  help function ftw!
 # write.csv(res,"C:/Users/kalig/Dropbox/lecture slides/CK's version/DataSets/res.csv")
 # look up and figure out how to export as a excel sheet!
@@ -187,7 +186,7 @@ mosaicplot(table(dt$Species, dt$size),
 )
 
 # box plots / distributions by group
-boxplot(dt$Sepal.Length ~ dt$Species + dt$size)
+boxplot(dt$Sepal.Length ~ dt$Species) # + dt$size)
 
 
 #### LET's stop here

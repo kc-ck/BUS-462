@@ -47,7 +47,7 @@ set.seed(42) # Set a seed to ensure repeatable random samples
   # Look at the p - value. It is smaller than the significance level of 0.05. Therefore, you should reject null
   
   # Use conf.level argument to adjust the confidence level.
-  t.test(x,mu=12,conf.level = .9)
+  t.test(x,mu=10.2,conf.level = .9)
   
   
 #2: Two-sample t-Test to compare 2 means  #####
@@ -76,7 +76,8 @@ set.seed(42) # Set a seed to ensure repeatable random samples
   
   # Look at the 95% CI of the differences between means: -3.36 to 0.2
   # that is a wide range. Look at the means of group 1 and 2, and calculate the difference
-  # 2.33-0.75 = 1.58 which falls within the CI interval.
+  # The t-stat value  falls within the CI interval.
+  # recall the t stat formula from the slides -
   
   # Thus, assuming normal distribution of the 2 samples, we can't conclude that the means are different!
   # for 2 groups to have differencces, the delta of means must be greater
