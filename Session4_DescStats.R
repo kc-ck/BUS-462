@@ -6,6 +6,13 @@
 ### REFERENCES - PLEAS GO THROUGH
 #(1) http://www.sthda.com/english/wiki/descriptive-statistics-and-graphics 
 #(2) https://statsandr.com/blog/descriptive-statistics-in-r/
+
+# MISC NOTES:
+# There are four major types of descriptive statistics:
+# Measures of Central Tendency. * Mean, Median, and Mode. ...
+# Measures of Dispersion or Variation. * Range, Variance, Standard Deviation. ...
+# Measures of Frequency: * Count, Percent, Frequency. ...
+# Measures of Position. * Percentile Ranks, Quartile Ranks.
 ############################################################
 
 
@@ -89,17 +96,17 @@ dt <- iris # assign dataset to object dt
   
   
   # Note on measures
-  #  Range. It’s not often used because it’s very sensitive to outliers.
-  # Interquartile range. It’s pretty robust to outliers. It’s used a lot in combination with the median.
-  # Variance. It’s completely uninterpretable because it doesn’t use the same units as the data. It’s almost never used except as a mathematical tool
-  # Standard deviation. This is the square root of the variance. It’s expressed in the same units as the data. The standard deviation is often used in the situation where the mean is the measure of central tendency.
+  #  Range. It's not often used because it's very sensitive to outliers.
+  # Interquartile range. It's pretty robust to outliers. It's used a lot in combination with the median.
+  # Variance. It's completely uninterpretable because it doesn't use the same units as the data. It's almost never used except as a mathematical tool
+  # Standard deviation. This is the square root of the variance. It's expressed in the same units as the data. The standard deviation is often used in the situation where the mean is the measure of central tendency.
 
   ########################s
   # VERY IMPORTANT NOTE:
   # standard deviation and the variance are different whether we compute it for a sample or a population 
   # see https://statsandr.com/blog/what-is-the-difference-between-population-and-sample/ 
   # In R, the standard deviation and the variance are computed as if the data represent a sample 
-  # (so the denominator is n−1, where n is the number of observations).
+  # (so the denominator is n-1, where n is the number of observations).
   ########################s
 
 #3  Summary functionality #####
@@ -113,7 +120,7 @@ dt <- iris # assign dataset to object dt
   
 #4 Misc. Short cut functions  #####
   # 4.1 sappply to to apply a particular function over a list or vector. 
-  ## i.e. Use it, to compute a function for each column in a data frame, like mean, sd, var, min, quantile, …
+  ## i.e. Use it, to compute a function for each column in a data frame, like mean, sd, var, min, quantile, â¦
   # row  output
   sapply(dt[, -5], mean)
   
