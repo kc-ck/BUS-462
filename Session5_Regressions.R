@@ -97,7 +97,7 @@ install.packages("stargazer")
 library(stargazer)
 
 #Summ Stats
-stargazer(dt,type="text")
+stargazer(cars,type="text")
 
 # Reg Output:
 stargazer(Model1, type = "text")
@@ -166,7 +166,7 @@ chart.Correlation(dt, histogram=TRUE, pch=19) # get's busy
  # okay, let's get back to regressions
  ?mtcars
 
-  #kitchen Sink model -- when you run a reg on everythin
+#kitchen Sink model -- when you run a reg on everythin
  
  Model.KS <- lm(mpg~.,data=dt)
  summary(Model.KS)
@@ -179,14 +179,14 @@ chart.Correlation(dt, histogram=TRUE, pch=19) # get's busy
  Model2 <- lm(mpg~am+wt,data=dt)
  summary(Model2)
  Model3 <- lm(mpg~am+wt+hp+disp,data=dt)
- summary(Model3)
+  summary(Model3)
  Model4 <- lm(mpg~am+wt+hp+disp+cyl,data=dt)
  summary(Model4)
  
  stargazer(Model1,Model2,Model3,Model4, type = "text")
  # look at adjusted R-squared
  
- stargazer(Model.KS,Model2,Model3,Model4,type = "text")
+ stargazer(Model.KS,Model4,type = "text")
  
  
  # MODEL DIAGNOSTICS:
