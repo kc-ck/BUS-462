@@ -167,7 +167,7 @@ chart.Correlation(dt, histogram=TRUE, pch=19) # get's busy
  ?mtcars
 
 #kitchen Sink model -- when you run a reg on everythin
- 
+
  Model.KS <- lm(mpg~.,data=dt)
  summary(Model.KS)
  stargazer(Model.KS, type = "text")
@@ -188,7 +188,7 @@ chart.Correlation(dt, histogram=TRUE, pch=19) # get's busy
  
  stargazer(Model.KS,Model4,type = "text")
  
- 
+                                          
  # MODEL DIAGNOSTICS:
  # Regression Diagnostics https://www.andrew.cmu.edu/user/achoulde/94842/homework/regression_diagnostics.html
  

@@ -58,7 +58,7 @@ View(tab2)
 # Kitchen Sink Model
 Model.KS <- lm(job_satisfaction ~ .  , data=dt)
 summary(Model.KS)
-stargazer(Model.KS,type="text",column.sep.width = "1pt",omit.stat=c("f"))
+stargazer(Model.KS,type="text",column.sep.width = "1pt")
 
 # CAN YOU IMPROVE THIS MODEL ?- 
 # USE THEORY and Correlation Matrix to guide you. 
