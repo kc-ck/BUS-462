@@ -52,8 +52,6 @@ chart.Correlation(dt1, histogram=TRUE, pch=19) # get's busy
 m.OLS.KS <- lm(exit ~ ., data=dt1)
 summary(m.OLS.KS)
 AIC(m.OLS.KS)
-### CLASS EXERCISES
-# compare other models within dt1
 
 
 stargazer(m.OLS.KS,type="text")
@@ -73,6 +71,7 @@ pR2(m.LOGIT)
 
 stargazer(m.OLS.KS, m.LOGIT,type="text")
 AIC(m.OLS.KS)
+exp(cbind(OR = coef(m.LOGIT), confint(m.LOGIT)))
 
 # pseudo r-squared is higher, even though AIC is lower
 # plus DV is binary => LOGIT is better to compare 

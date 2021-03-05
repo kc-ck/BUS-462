@@ -38,7 +38,7 @@ mydata <- fread("https://stats.idre.ucla.edu/stat/data/binary.csv")
   
   #scatterplot and correlation matrix
   chart.Correlation(mydata, histogram=TRUE, pch=19) # get's busy
-  
+  stat.desc(mydata)
   # What do you think the model should be?
   # higher GRE, GPA and a higher ranked school should lead to higher p(admit)
   
@@ -153,7 +153,8 @@ mydata <- fread("https://stats.idre.ucla.edu/stat/data/binary.csv")
     
   newdata2 <- with(mydata, data.frame(gre = rep(seq(from = 200, to = 800, length.out = 100),4), 
                                       gpa = mean(gpa), rank = factor(rep(1:4, each = 100))))
-  newdata2  
+  head(newdata2) 
+  tail(newdata2)
     
   # predictions for each row (Set of values)
   # slight addition to before: we want Std  Errors since this is not a categorical variables
