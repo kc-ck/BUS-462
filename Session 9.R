@@ -19,6 +19,12 @@ library(PerformanceAnalytics)
 library(dplyr)
 
 #ref: https://www.guru99.com/r-decision-trees.html 
+#Step 1: Import Data
+#path <- "https://raw.githubusercontent.com/guru99-edu/R-Programming/master/titanic_data.csv"
+#dt <- fread(path)  
+
+titanic <-fread("C:/Users/kalig/Dropbox/SFU TEACHING/BUS 462/datasets and cases/titanic.csv")
+
 
 #Step 1: Import Data -- up on canvas
   titanic <-fread("C:/Users/kalig/Dropbox/SFU TEACHING/BUS 462/datasets and cases/titanic.csv")
@@ -31,15 +37,24 @@ library(dplyr)
 #Step 2: Clean the Data
   stat.desc(titanic)  # There's a bunch of NAs
   
-  
-  
   # let's keep only those factors of interest
   dt <- titanic[,c("survived","sex","age","sibsp")]
-  # convert factors for pclass and survived
   
+  # summ stats
+  stat.desc(dt)
+  # notice NA and age and sex are chr
   dt$age <- as.integer(dt$age)
   dt$sex <- as.factor(dt$sex)
+  dt$sex <- as.numeric(dt$sex)
   
+  # omit NA's
+  dt <- na.omit(dt)
+  
+  #summ stats
+  stargazer(dt,type="text")
+  
+  # correlation plot
+  chart.Correlation(dt) 
   
   # shuffle the data - randomize rows to prep for splitting into test and train parts
   shuffle_index <- sample(1:nrow(dt))
