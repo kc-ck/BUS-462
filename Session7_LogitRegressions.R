@@ -18,7 +18,8 @@
   library(PerformanceAnalytics)
   
 # PROB DEFINITION:
-  # We want to understand (and predict) Admits to a grad program, based on GRE, GPA and prestige of undergrad school
+  # We want to understand (and predict) Admits to a grad program, based on GRE, GPA and prestige (Rank)
+  # of undergrad school
   # The response variable, admit/don't admit, is a binary variable.
   
 #LOAD DATA  ###
@@ -31,7 +32,8 @@ mydata <- fread("https://stats.idre.ucla.edu/stat/data/binary.csv")
 
   # summary stats
   stargazer(mydata,type="text",summary.stat = c("min", "p25", "median","mean", "p75", "max","sd"))
-  
+  stat.desc(mydata)
+
   # check if analyzable -- any missing data for admit's?
   table(mydata$admit,mydata$rank)
   xtabs(~admit + rank, data = mydata) # alternate way of seeing it / with col and row names
@@ -39,6 +41,7 @@ mydata <- fread("https://stats.idre.ucla.edu/stat/data/binary.csv")
   #scatterplot and correlation matrix
   chart.Correlation(mydata, histogram=TRUE, pch=19) # get's busy
   stat.desc(mydata)
+  
   # What do you think the model should be?
   # higher GRE, GPA and a higher ranked school should lead to higher p(admit)
   
@@ -91,7 +94,7 @@ mydata <- fread("https://stats.idre.ucla.edu/stat/data/binary.csv")
   ###############
   
   #now compare to OLS
- stargazer(mOLS.1,mOLS.2,mOLS.KS,mLOGIT,type="text",header = FALSE)
+ stargazer(mOLS.KS,mLOGIT,type="text",header = FALSE)
   
   # What difference do you notice?
   

@@ -98,7 +98,7 @@ stargazer(m.logit.KS,model.step.Logit,type="text")
 
 # compare OLS and Logit
 
-stargazer(model.step.OLS, model.step.Logit,type="text")
+stargazer(m.logit.KS, model.step.Logit,type="text")
 
 # again, half day leaves predicting exit?!
 
