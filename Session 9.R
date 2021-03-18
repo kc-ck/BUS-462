@@ -66,7 +66,7 @@ library(dplyr)
 
   library(rpart)
   library(rpart.plot)
-  fit <- rpart(survived~sex+age+sibsp, data = data_train, method = 'class') # Model for CARD
+  fit <- rpart(survived~sex+age+sibsp, data = data_train, method = 'class') # Prediction Model using CART
   rpart.plot(fit, extra = 101) # tree plotting
   
 #step 5 Prediction
