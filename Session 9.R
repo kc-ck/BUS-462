@@ -20,8 +20,9 @@ library(dplyr)
 
 #ref: https://www.guru99.com/r-decision-trees.html 
 
-#Step 1: Import Data
+#Step 1: Import Data -- up on canvas
   titanic <-fread("C:/Users/kalig/Dropbox/SFU TEACHING/BUS 462/datasets and cases/titanic.csv")
+  # data available here: https://raw.githubusercontent.com/guru99-edu/R-Programming/master/titanic_data.csv
   #ref:https://data.world/nrippner/titanic-disaster-dataset 
   head(titanic)
   tail(titanic)
