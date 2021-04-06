@@ -74,19 +74,21 @@ click_data <- fread("C:/Users/kalig/Downloads/click_data.csv")
   library(powerMediation)
   library(broom)
   total_Sample_size <- SSizeLogisticBin(p1= 0.54 ,# conversion rate in aug
-                                      p2= 0.64, # you want to detect a 10% increase
+                                      p2= 0.55, # you want to detect a 10% increase
                                       B= 0.5, # proportion of sample for test
                                       alpha= .05,
                                       power= .8)
-## This means you need 758 experimental observations to detect a 10% increase in experiment sample
+  total_Sample_size
+  ## This means you need 758 experimental observations to detect a 10% increase in experiment sample
   
-    # Now calculate for August, but 5% increase (p2)
-    total_Sample_size <- SSizeLogisticBin(p1= 0.54 ,# conversion rate in aug
-                                        p2= 0.59, # you want to detect a 10% increase
+    # Now calculate for january, but 5% increase (p2)
+    total_Sample_size <- SSizeLogisticBin(p1= 0.197 ,# conversion rate in aug
+                                        p2= .297, # you want to detect a 10% increase
                                         B= 0.5, # proportion of sample for test
                                         alpha= .05,
                                         power= .8)
-## This means you need 3085 experimental observations to detect a 10% increase in experiment sample  
+    total_Sample_size
+    ## This means you need 3085 experimental observations to detect a 10% increase in experiment sample  
 
     # Experiment Analysis #########
   
